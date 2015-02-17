@@ -19,7 +19,7 @@ fi
 
 /usr/local/bin/rpi_gpio_ntp -g 18 -N 1
 
-/usr/sbin/set-chronodot.py
+/usr/local/sbin/set-chronodot.py
 /usr/local/bin/rpi_gpio_ntp -g 4 -N 2
 
 /sbin/modprobe i2c-bcm2708
@@ -29,6 +29,6 @@ echo ds3231 0x68 >/sys/class/i2c-adapter/i2c-1/new_device
 hwclock -s
 
 /usr/sbin/7seg_clock.py &
-disown `pidof /usr/bin/python /usr/sbin/7seg_clock.py`
+disown `pidof /usr/bin/python /usr/local/sbin/7seg_clock.py`
 
 exit 0
